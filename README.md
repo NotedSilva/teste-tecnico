@@ -1,5 +1,7 @@
 <p align="center">
-  <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/licenciamento/" target="blank"><img src="https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/chamadas/URBANISMO_E_LICENCIAMENTO_HORIZONTAL_FUNDO_CLARO_1665756993.png" width="200" alt="SMUL Logo" /></a>
+  <a href="https://www.prefeitura.sp.gov.br/cidade/secretarias/licenciamento/" target="blank">
+    <img src="https://www.prefeitura.sp.gov.br/cidade/secretarias/upload/chamadas/URBANISMO_E_LICENCIAMENTO_HORIZONTAL_FUNDO_CLARO_1665756993.png" width="200" alt="SMUL Logo" />
+  </a>
 </p>
 
 <p align="center">Teste técnico - SMUL/ATIC</p>
@@ -7,67 +9,71 @@
 ## Descrição
 
 Repositório de teste técnico.
+
 Documentação de tecnologia utilizada:
 
-- NESTJS: https://docs.nestjs.com/
-- PRISMAIO: https://www.prisma.io/docs/getting-started
+- [NESTJS](https://docs.nestjs.com/)
+- [PRISMA](https://www.prisma.io/docs/getting-started)
 
 ## Instalação
 
 ```bash
 npm install
 ```
-
 ## Criando o banco de dados
-
 ```bash
 npx prisma migrate dev
 ```
-
 ## Rodando o app
-
 ```bash
-# modo de monitoramento
+# Modo de monitoramento
 npm run dev
 ```
+## Teste Concluido
+Foi desenvolvido uma calculadora que executa as 4 operações básicas, com endpoints para realizar as operações e também foi criado endpoints para listagem.
 
-## O Teste
+## Endpoints
+### Operações Matemáticas
+* Adição: POST /operacoes/adicao <br/>
+* Subtração: POST /operacoes/subtracao <br/>
+* Multiplicação: POST /operacoes/multiplicacao <br/>
+* Divisão: POST /operacoes/divisao <br/>
 
-A ideia é criar um sistema básico de calculadora, que execute as 4 operações básicas. <br />
-Como exemplo, a operação de adição já está implementada na URL:
+## Consulta de Operações
+* Listar Todas as Operações: GET /operacoes/listar <br/>
+* Filtrar por Tipo: GET /operacoes/listar?tipo=1 <br/>
 
-```bash
-/operacoes/adicao
-```
+## Onde:
 
-Além de delvover o resultado da operação como resposta para a request, também é necessário salvar os registros das operações feitas em banco de dados (SQLite). <br />
-Para consultar o que foi inserido em banco de dados, será criado um endpoint que retorne todas as operações salvas. <br />
-Caso o usuário queira, também será possível filtrar pelo tipo de operação. Mas caso contrário, retornar todas, independente do tipo. <br />
+* 1 = Adição
+* 2 = Subtração
+* 3 = Multiplicação
+* 4 = Divisão
 
-## Tarefa 1
+## Imagens
 
-Criar os endpoints para as demais operações matemáticas básicas:
+### Operações:
+#### Adição
+![adicao](https://github.com/user-attachments/assets/2c2f362e-3000-4a14-895c-dbf7fbaf875d)
+#### Subtração
+![subtracao](https://github.com/user-attachments/assets/10e07e08-2b0e-41c0-8709-a9dd2ac18164)
+#### Multiplicação
+![multiplicacao](https://github.com/user-attachments/assets/6cfa85f9-6095-4113-9ce6-734bd44b67f6)
+##### Divisão
+![divisao](https://github.com/user-attachments/assets/94db8a5f-f726-47f0-92da-fa0efc20af8f)
 
-- subtração
-- multiplicação
-- divisão
+### Listagem Geral
+![listar](https://github.com/user-attachments/assets/51199744-f842-458f-84fe-2b4f047f4072)
 
-Registrando as operações realizadas em banco de dados e seguindo o exemplo de urls:
+### Listagem por tipo:
+#### Adição
+![ListarPorTipoAdicao](https://github.com/user-attachments/assets/defaeb64-618d-4022-aa1c-fa35aaba26db)
+#### Subtração
+![ListarPorTipoSubtracao](https://github.com/user-attachments/assets/4baa14f6-7177-4fa8-a807-dbba0937f49e)
+#### Multiplicação
+![ListarPorTipoMultiplicacao](https://github.com/user-attachments/assets/98cb9d2b-d12f-43b8-b92d-a891725a37c6)
+##### Divisão
+![ListarPorTipoDivisao](https://github.com/user-attachments/assets/d8dde571-8919-4bcb-9a07-8605e97ae8ec)
 
-- /operacoes/adicao
-- /operacoes/subtracao
-- /operacoes/multiplicacao
-- /operacoes/divisao
 
-## Tarefa 2
 
-Criar endpoint para consultar todas as operações registradas, com a possibilidade de filtragem por tipo de operação, conforme o exemplo:
-
-- /operacoes/listar?tipo=1
-
-Onde:
-
-- 1 = Adição
-- 2 = Subtração
-- 3 = Multiplicação
-- 4 = Divisão
